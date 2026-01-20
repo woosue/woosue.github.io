@@ -1,177 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./normalize.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"
-      rel="stylesheet"
-    />
-    <title>The Web framework for perfectionists with deadlines | Django</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="logo">
-          <img
-            src="https://static.djangoproject.com/img/logo-django.42234b631760.svg"
-            alt="Django"
-          />
-        </h1>
-        <nav class="nav">
-          <ul class="list">
-            <li class="list-item"><a href="#">Overview</a></li>
-            <li class="list-item"><a href="#">Download</a></li>
-            <li class="list-item"><a href="#">Documentation</a></li>
-            <li class="list-item"><a href="#">News</a></li>
-            <li class="list-item"><a href="#">Community</a></li>
-            <li class="list-item"><a href="#">Code</a></li>
-            <li class="list-item"><a href="#">About</a></li>
-            <li class="list-item"><a href="#">♥ Donate</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="main">
-      <div class="hero-section">
-        <div class="container">
-          <p class="intro-desc">
-            Django makes it easier to build better Web apps more quickly and
-            with less code.
-          </p>
-          <a href="#" class="hero-cta cta">
-            Get started with Django
-          </a>
-        </div>
-      </div>
-      <div class="container-float">
-        <div class="main-content">
-          <h2 class="main-title">Stay in the loop</h2>
-          <p class="main-desc">
-            Subscribe to one of our mailing lists to stay up to date with
-            everything in the Django community:
-          </p>
-          <div class="mailing-layout">
-            <div class="mailing">
-              <h3 class="mailing-title">
-                <a href="#">
-                  Using Django
-                </a>
-              </h3>
-              <p class="mailing-desc">
-                Get help with Django and follow announcements.
-              </p>
-              <form action="#" class="mailing-form">
-                <label for="input-following"
-                  >send email for following news</label
-                >
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  id="input-following"
-                  name="input-following"
-                />
-                <button type="submit" class="mailing-form-btn">Submit</button>
-              </form>
-              <p class="mailing-desc">
-                You can also subscribe by sending an email to
-                <a href="mailto:django-users+subscribe@googlegroups.com"
-                  >django-users+subscribe@googlegroups.com</a
-                >
-                and following the instructions that will be sent to you.
-              </p>
-            </div>
-            <div class="mailing">
-              <h3 class="mailing-title">
-                <a href="#">Contributing to Django</a>
-              </h3>
-              <p class="mailing-desc">
-                Contribute to the development of Django itself.
-              </p>
-              <form action="#" class="mailing-form">
-                <label for="email-contribute"
-                  >send e-mail for contribution</label
-                >
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  id="email-contribute"
-                  name="email-contribute"
-                />
-                <button type="submit" class="mailing-form-btn">
-                  Submit
-                </button>
-              </form>
-              <p class="mailing-desc">
-                Before asking a question about how to contribute, read
-                <a
-                  href="https://docs.djangoproject.com/en/dev/internals/contributing/"
-                  >Contributing to Django</a
-                >. Many frequently asked questions are answered there.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="side-content">
-          <div class="container-side-cta">
-            <a href="#" class="cta side-cta"
-              >Download <em>latest release: 2.1.7</em></a
-            >
-            <a href="#" class="more">Django documentation</a>
-          </div>
-          <div class="latest-news infos">
-            <h2 class="infos-title">Latest news</h2>
-            <article class="news-article">
-              <h3 class="news-title">
-                <a href="#"
-                  >Django bugfix releases: 2.1.7, 2.0.12 and 1.11.20</a
-                >
-              </h3>
-              <p class="news-desc">
-                Today the Django project issued bugfix releases for the 2.1, 2.0
-                and 1.11 release series.
-              </p>
-              <p class="news-meta">
-                Posted by <span>Carlton Gibson</span> on
-                <time datetime="2019-02-11">2월 11, 2019</time>
-              </p>
-            </article>
-            <a href="#" class="more">More news</a>
-          </div>
-          <div class="get-involved infos">
-            <h2 class="infos-title">Get involved</h2>
-            <dl class="list-communities">
-              <dt class="community-title">
-                <a href="#">#django IRC channel</a>
-              </dt>
-              <dd class="community-desc">Chat with other Django users</dd>
-              <dt class="community-title"><a href="#">Ticket system</a></dt>
-              <dd class="community-desc">
-                Report bugs and make feature requests
-              </dd>
-            </dl>
-            <a href="#" class="more">Inside the django community</a>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="footer"> 
-      <div class="container">
-        <p class="copyright">
-          &copy; 2005-2019
-          <a href="https://www.djangoproject.com/foundation/">
-            Django Software Foundation</a
-          >
-          and individual contributors. Django is a
-          <a href="https://www.djangoproject.com/trademarks/"
-            >registered trademark</a
-          >
-          of the Django Software Foundation.
-        </p>
-      </div>
-    </footer>
-  </body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Dashboard</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* 구글 검색창 스타일 */
+        .search-container {
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: 1px solid #dfe1e5;
+            font-size: 16px;
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            outline: none;
+        }
+
+        /* 타일 그리드 컨테이너 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        /* 개별 타일 카드 스타일 */
+        .card {
+            background: white;
+            border-radius: 15px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+        }
+
+        /* 타일 내부 아이콘/이미지 영역 */
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        /* (선택사항) 배경 이미지를 넣고 싶을 때 사용하는 클래스 */
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; /* 배경 흐릿하게 */
+            transition: opacity 0.3s;
+        }
+        .card:hover .card-bg {
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" class="search-box" placeholder="Google 검색 또는 URL 입력" autofocus>
+        </form>
+    </div>
+
+    <div class="grid-container">
+        
+        <a href="https://docs.google.com/document/d/1uRy2sjRRpDh3WE2WX6pgXFsrmFypIqli3Obts1UvkHk/edit?usp=sharing" class="card" target="_blank">
+            <div class="card-bg" style="background-image: url('report_bg.png');"></div> <div class="card-icon">📄</div>
+            <span class="card-title">2026 Weekly Report</span>
+        </a>
+
+        <a href="https://notebooklm.google.com/" class="card" target="_blank">
+            <div class="card-icon">📓</div>
+            <span class="card-title">NotebookML</span>
+        </a>
+
+        <a href="https://gemini.google.com/" class="card" target="_blank">
+            <div class="card-icon">✨</div>
+            <span class="card-title">Gemini AI</span>
+        </a>
+
+        <a href="https://mail.google.com/" class="card" target="_blank">
+            <div class="card-icon">📧</div>
+            <span class="card-title">Gmail</span>
+        </a>
+
+        <a href="https://calendar.google.com/" class="card" target="_blank">
+            <div class="card-icon">📅</div>
+            <span class="card-title">일정 확인</span>
+        </a>
+
+    </div>
+
+</body>
 </html>
