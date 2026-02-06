@@ -9,6 +9,221 @@
         body {
             background-color: #f5f7fa;
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            display: flex; flex-direction: column; align-items: center;
+            min-height: 100vh; margin: 0; padding-top: 50px;
+        }
+
+        /* 탭 버튼 스타일 */
+        .tab-nav {
+            display: flex; gap: 20px; margin-bottom: 30px;
+            background: white; padding: 10px 20px;
+            border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .tab-btn {
+            border: none; background: none; padding: 10px 25px;
+            font-size: 18px; font-weight: bold; color: #888;
+            cursor: pointer; border-radius: 30px; transition: all 0.3s;
+        }
+        .tab-btn.active { color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .tab-btn.work-mode.active { background-color: #0052cc; }
+        .tab-btn.life-mode.active { background-color: #2da44e; }
+
+        /* 검색창 */
+        .search-container { margin-bottom: 20px; width: 100%; max-width: 600px; }
+        .search-box {
+            width: 100%; padding: 15px 20px; border-radius: 30px;
+            border: 1px solid #dfe1e5; font-size: 16px; outline: none;
+            box-shadow: 0 1px 6px rgba(32,33,36,0.1);
+        }
+
+        /* 섹션 컨테이너 (탭 전환용) */
+        .section-wrapper {
+            display: none; /* 기본 숨김 */
+            width: 100%; max-width: 1000px;
+            padding: 20px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .section-wrapper.active { display: block; }
+
+        /* 소제목 스타일 (줄 구분용) */
+        .row-title {
+            font-size: 18px; font-weight: bold; color: #555;
+            margin: 30px 0 15px 10px; /* 위아래 여백 */
+            border-left: 5px solid #0052cc; /* 왼쪽 파란띠 */
+            padding-left: 10px;
+        }
+        /* 개인용 소제목 색상 변경 */
+        #life-section .row-title { border-left-color: #2da44e; }
+
+        /* 그리드 (타일 배치용) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px; margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 카드 스타일 */
+        .card {
+            background: white; border-radius: 15px; height: 160px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-decoration: none; color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .card-icon { font-size: 40px; margin-bottom: 10px; }
+        .card-title { font-size: 18px; font-weight: bold; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="tab-nav">
+        <button class="tab-btn work-mode active" onclick="switchTab('work')">🏢 업무 (Work)</button>
+        <button class="tab-btn life-mode" onclick="switchTab('life')">🏃 개인 (Life)</button>
+    </div>
+
+    <div class="search-container">
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" class="search-box" placeholder="Google 검색..." autofocus>
+        </form>
+    </div>
+
+    <div id="work-section" class="section-wrapper active">
+        
+        <div class="row-title">📝 문서 및 리포트</div>
+        <div class="grid-container">
+            <a href="https://docs.google.com/document/d/1uRy2sjRRpDh3WE2WX6pgXFsrmFypIqli3Obts1UvkHk/edit?tab=t.0#heading=h.y3c2yoaz0my1" class="card" target="_blank">
+                <div class="card-icon">📄</div>
+                <span class="card-title">주간 리포트</span>
+            </a>
+            <a href="https://notebooklm.google.com/notebook/de681e15-7400-4ba1-ba1d-240026f329eb" class="card" target="_blank">
+                <div class="card-icon">📓</div>
+                <span class="card-title">All projects</span>
+            </a>
+            <a href="https://notebooklm.google.com/notebook/5981bd24-f594-44b5-9a55-dc1f17270965" class="card" target="_blank">
+                <div class="card-icon">➿</div>
+                <span class="card-title">Auto EMP</span>
+            </a>
+            <a href="AI-driven generation of PathWay & CableWay" class="card" target="_blank">
+                <div class="card-icon">🛰️</div>
+                <span class="card-title">Pathway&Cableway</span>
+            </a>
+            <a href="https://gemini.google.com/" class="card" target="_blank">
+                <div class="card-icon">✨</div>
+                <span class="card-title">Gemini AI</span>
+            </a>
+        </div>
+
+        <div class="row-title">🚀 빠른 실행</div>
+        <div class="grid-container">
+            <a href="https://docs.google.com/document/d/13nowpX_D3G7N-jShIxAjcYz-nFSVAMDZb1mVO8fGQVw/edit?tab=t.haovelihq894" class="card" target="_blank">
+            <div class="card-icon">📈</div>
+            <span class="card-title">주식 노트</span>
+            </a>
+    
+            <a href="https://notebooklm.google.com/notebook/6da0d566-659d-4f97-ab44-a7ba806a613a" class="card" target="_blank">
+                <div class="card-icon">🏊🚴🏃</div>
+                <span class="card-title">운동 노트북LM</span>
+            </a>
+            
+            <a href="https://connect.garmin.com/" class="card" target="_blank">
+                <div class="card-icon">⌚</div>
+                <span class="card-title">Garmin Connect</span>
+            </a>
+            <a href="https://www.youtube.com/" class="card" target="_blank">
+                <div class="card-icon">▶️</div>
+                <span class="card-title">YouTube</span>
+            </a>
+            <a href="https://new.land.naver.com/" class="card" target="_blank">
+                <div class="card-icon">🏠</div>
+                <span class="card-title">부동산</span>
+            </a>
+            <a href="https://calendar.google.com/" class="card" target="_blank">
+                <div class="card-icon">📅</div>
+                <span class="card-title">내 일정</span>
+            </a>
+        </div>
+    </div>
+
+
+    <div id="life-section" class="section-wrapper">
+        
+        <div class="row-title">🏃‍♂️ My Life</div>
+        <div class="grid-container">
+            <a href="https://calendar.google.com/" class="card" target="_blank">
+                <div class="card-icon">📅</div>
+                <span class="card-title">통합 일정</span>
+            </a>
+            
+            <a href="https://notebooklm.google.com/notebook/6da0d566-659d-4f97-ab44-a7ba806a613a" class="card" target="_blank">
+                <div class="card-icon" style="font-size: 30px;">🏊🚴🏃</div>
+                <span class="card-title">운동 NotebookLM</span>
+            </a>
+
+            <a href="https://band.us/" class="card" target="_blank">
+                <div class="card-icon">🚴</div>
+                <span class="card-title">달성철인밴드</span>
+            </a>
+
+            <a href="https://band.us/" class="card" target="_blank">
+                <div class="card-icon">🏢</div>
+                <span class="card-title">신성철 부동산</span>
+            </a>
+
+            <a href="https://finance.yahoo.com/" class="card" target="_blank">
+                <div class="card-icon">📈</div>
+                <span class="card-title">주식/투자</span>
+            </a>
+             <a href="https://connect.garmin.com/" class="card" target="_blank">
+                <div class="card-icon">⌚</div>
+                <span class="card-title">Garmin Connect</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(mode) {
+            // 1. 모든 섹션 숨기기
+            document.getElementById('work-section').classList.remove('active');
+            document.getElementById('life-section').classList.remove('active');
+            
+            // 2. 탭 버튼 상태 초기화
+            document.querySelector('.work-mode').classList.remove('active');
+            document.querySelector('.life-mode').classList.remove('active');
+
+            // 3. 선택 모드 활성화
+            if (mode === 'work') {
+                document.getElementById('work-section').classList.add('active');
+                document.querySelector('.work-mode').classList.add('active');
+                document.body.style.backgroundColor = "#f5f7fa"; 
+            } else {
+                document.getElementById('life-section').classList.add('active');
+                document.querySelector('.life-mode').classList.add('active');
+                document.body.style.backgroundColor = "#e6fffa"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
